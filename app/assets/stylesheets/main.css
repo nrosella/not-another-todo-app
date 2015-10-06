@@ -93,6 +93,10 @@ ul {
     list-style-type: none;
 }
 
+ul.todo-list {
+    padding-left: 15px;
+}
+
 .navbar-default {
 	background-color: #3498db;
 	border-color: transparent;

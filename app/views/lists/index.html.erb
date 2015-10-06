@@ -1,19 +1,16 @@
 <section class="todoapp col-lg-12 col-sm-12">
   <header class="header">
     <h1>Your Todos</h1>
-    <%= form_for(@list, url: {action: "create"}) do |f| %>
-      <%= f.text_field :name, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
-      <% end %>
-    <%#= form_for(@list, :remote => true) do |f| %>
-      <%#= f.text_field :item_one, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
-    <%# end %>
+    <%= form_for(@list, :remote => true) do |f| %>
+      <%= f.hidden_field :name, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
+      <%= f.submit %>
+    <% end %>
+
   </header>
   <section class="main">
-    <input class="toggle-all" type="checkbox">
-    <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
       <% @lists.each do |list| %>
-      <li><a href='<%= list_path(list.id) %>'><%= list.name %></li>
+      <li><a href='<%= list_path(list.id) %>'><%= list.title %></li>
       <% end %>
     </ul>
   </section>
