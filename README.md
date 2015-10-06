@@ -37,4 +37,4 @@ Link to your blog, twitter, etc!
 
 ## License
 
-Not Another Todo App is © Nino Rosella.
+Not Another Todo App is © Nino Rosella 2015.
