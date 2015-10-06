@@ -2,13 +2,12 @@
   <header class="header">
     <h1>Your Todos</h1>
     <% if @lists.today == true %>
-      <%= form_for(@list, :remote => true) do |f| %>
+      <%= form_for(@list) do |f| %>
         <%= f.hidden_field :name, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
         <%= f.submit "Create a new list for tomorrow", :class => "btn btn-warning btn-lg"%>
         <% end %>
       <% else %>
         <p>You've already created tomorrow's list</p>
-      
     <% end %>
 
   </header>
@@ -21,8 +20,4 @@
   </section>
 </section>
 
-<% if @lists.today == true %>
-  <p>there are no posts today</p>
-<% else %>
-  <p>there are already posts today</p>
-<% end %>
+

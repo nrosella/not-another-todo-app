@@ -9,11 +9,12 @@ class ListsController < ApplicationController
 		@list = List.new(list_params)
 		#binding.pry
 	  if @list.save
-      if request.xhr?
-      	render :layout => false
-      else
-      	redirect_to root_path
-      end
+	  	redirect_to list_path(@list)
+      # if request.xhr?
+      # 	render :layout => false
+      # else
+      # 	redirect_to root_path
+      # end
     else
       @lists = List.all
       render :index
