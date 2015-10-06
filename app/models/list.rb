@@ -17,5 +17,15 @@ class List < ActiveRecord::Base
 			new_title = "Placeholder"
 		end
 	end
+
+	def self.today
+    a = where("created_at >= ?", Time.zone.now.beginning_of_day)
+    if a.empty? == true
+    	true
+    else
+    	false
+    end
+    # where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight) ? true : false
+  end
 	
 end
