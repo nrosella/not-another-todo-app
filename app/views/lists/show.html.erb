@@ -1,4 +1,8 @@
-<section class="todo-app">
+
+  <header class="header">
+    <h1 id="list-h1"><%= @list.title %></h1>
+    <!-- <h1 id="list-h1"><%#= @list.name %></h1> -->
+  </header>
 	<section class="main">
 		<ul class="todo-list">
 			<%= render 'lists/item_one' %>
@@ -7,5 +11,5 @@
 			<%= render 'lists/item_four' %>
 		</ul>
 	</section>
-</section>
+
 

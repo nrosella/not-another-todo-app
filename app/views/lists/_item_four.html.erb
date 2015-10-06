@@ -5,9 +5,9 @@
 	  </div>
 	  <div class="panel-body">
 	    <%= form_for(@list, url: {action: "update"}, :remote => true) do |f| %>
-			   	<%= f.text_field :item_four, placeholder: 'Add a task', :class => "edit form-control", :id => "second-form" %>
+			   	<%= f.text_field :item_four, placeholder: 'Add a task', :class => "edit form-control", :id => "fourth-form" %>
 			  <% end %>
 	  </div>
-	  <div class="panel-footer"><input class="toggle panel-title", id="form-input-two" type="checkbox" unchecked=""> Complete</div>
+	  <div class="panel-footer"><input class="toggle panel-title", id="form-input-four" type="checkbox" unchecked=""> Complete</div>
 	</div>
 </li>

@@ -2,6 +2,7 @@ class List < ActiveRecord::Base
 	belongs_to :user
 
 	def title
+		# binding.pry
 		if self.format == 0  # Friday 02 October 2015 
 			new_title = self.created_at + 1.day
 			new_title.frmt_AA_dd_BB_YY " "

@@ -7,9 +7,13 @@ class ListsController < ApplicationController
 
 	def create
 		@list = List.new(list_params)
-		# binding.pry
+		#binding.pry
 	  if @list.save
-      redirect_to root_path
+      if request.xhr?
+      	render :layout => false
+      else
+      	redirect_to root_path
+      end
     else
       @lists = List.all
       render :index
