@@ -1,3 +1,9 @@
-var html = "<%=j render 'lists/item_one' %>";
+var htmlOne = "<%=j render 'lists/item_one' %>";
+var htmlTwo = "<%=j render 'lists/item_two' %>";
+var htmlThree = "<%=j render 'lists/item_three' %>";
+var htmlFour = "<%=j render 'lists/item_four' %>";
 
-$("li[data-id-first=<%= @list.id %>]").replaceWith(html)
+$("li[data-id-first=<%= @list.id %>]").replaceWith(htmlOne)
+$("li[data-id-second=<%= @list.id %>]").replaceWith(htmlTwo)
+$("li[data-id-third=<%= @list.id %>]").replaceWith(htmlThree)
+$("li[data-id-fourth=<%= @list.id %>]").replaceWith(htmlFour)
