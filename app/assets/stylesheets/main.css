@@ -147,6 +147,38 @@ panel {
           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
+.panel-danger {
+  border: none;
+}
+
+.panel-danger > .panel-heading {
+    background-color: #a94442;
+}
+
+.panel-info {
+  border: none;
+}
+
+.panel-info > .panel-heading {
+  background-color: #E5A607;
+}
+
+.panel-primary {
+    border: none;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #2A957B;
+}
+
+.panel-warning {
+    border: none;
+}
+
+.panel-warning > .panel-heading {
+    background-color: #679DD7;
+}
+
 .box-shadow--8dp {
     box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2)
 }

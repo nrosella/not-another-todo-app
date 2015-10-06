@@ -1,11 +1,11 @@
-<li class="item" data-id-first="<%= @list.id %>">
-	<div class="panel panel-danger box-shadow--8dp">
+<li class="item" data-id-second="<%= @list.id %>">
+	<div class="panel panel-info box-shadow--8dp">
 	  <div class="panel-heading">
-	    <h5 class="panel-header-title">Mission Critical Task One</h5>
+	    <h5 class="panel-header-title">Mission Critical Task Two</h5>
 	  </div>
 	  <div class="panel-body">
 	    <%= form_for(@list, url: {action: "update"}, :remote => true) do |f| %>
-			   	<%= f.text_field :item_one, placeholder: 'Add a task', :class => "edit form-control", :id => "first-form" %>
+			   	<%= f.text_field :item_two, placeholder: 'Add a task', :class => "edit form-control", :id => "second-form" %>
 			  <% end %>
 	  </div>
 	  <div class="panel-footer"><input class="toggle panel-title", id="form-input-two" type="checkbox" unchecked=""> Complete</div>
