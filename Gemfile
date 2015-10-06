@@ -48,6 +48,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'database_cleaner'
+  gem 'rails_layout'
   gem 'sqlite3'
   gem 'pry'
   gem 'guard-rspec', require: false
@@ -60,5 +61,12 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'devise'
+gem 'figaro'
+gem 'turbolinks'
+gem 'simple_form'
+gem 'formatted_times'
+
+
+

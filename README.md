@@ -37,4 +37,4 @@ Link to your blog, twitter, etc!
 
 ## License
 
-Not Another Todo App 2 is MIT Licensed. See LICENSE for details.
+Not Another Todo App is © Nino Rosella.
