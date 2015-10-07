@@ -1,11 +1,23 @@
-<li class="item" data-id-first="<%= @list.id %>">
-	<div class="panel panel-danger box-shadow--8dp">
-	  <div class="panel-heading">
-	    <h5 class="panel-header-title">Mission Critical Task One</h5>
-	  </div>
-	  <div class="panel-body">
-	  	<h4 class="panel-p-tag" id="item-one-complete"><%= @list.item_one %></h4>
-	  </div>
-	  <div class="panel-footer"><input class="toggle panel-title", id="form-input" type="checkbox" unchecked=""> Complete</div>
-	</div>
-</li>
+<% if @list.is_completed == false %>
+	<li class="item" data-id-first="<%= @list.id %>">
+		<div class="panel panel-danger box-shadow--8dp">
+		  <div class="panel-heading">
+		    <h5 class="panel-header-title">Mission Critical Task One</h5>
+		  </div>
+		  <div class="panel-body">
+		  	<h4 class="panel-p-tag" id="item-one-complete"><%= @list.item_one %></h4>
+		  </div>
+		</div>
+	</li>
+<% else %>
+	<li class="item" data-id-first="<%= @list.id %>">
+		<div class="panel panel-danger box-shadow--8dp">
+		  <div class="panel-heading">
+		    <h5 class="panel-header-title">Mission Critical Task One</h5>
+		  </div>
+		  <div class="panel-body">
+		  	<h4 class="panel-p-tag strikethrough" id="item-one-complete"><%= @list.item_one %></h4>
+		  </div>
+		</div>
+	</li>
+<% end %>

@@ -13,6 +13,7 @@
 		</ul>
 	<% else %>
 		<ul class="todo-list">
+			<%= render 'lists/completed' %>
 			<%= render 'lists/item_one_locked' %>
 			<%= render 'lists/item_two_locked' %>
 			<%= render 'lists/item_three_locked' %>
@@ -29,5 +30,5 @@ do not render form. instead render noraml view in a panel -->
 	<p>editable</p>
 <% else %>
 	<p>not editable</p>
-	<p>Why can't I edit this todo list? Tooltip</p>
+	<p>Why can't I edit this todo list? Popover</p>
 <% end %>

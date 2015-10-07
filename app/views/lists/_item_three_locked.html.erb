@@ -1,11 +1,23 @@
-<li class="item" data-id-third="<%= @list.id %>">
+<% if @list.is_completed == false %>
+	<li class="item" data-id-third="<%= @list.id %>">
+		<div class="panel panel-primary box-shadow--8dp">
+		  <div class="panel-heading">
+		    <h5 class="panel-header-title">Task Three</h5>
+		  </div>
+		  <div class="panel-body">
+				<h4 class="panel-p-tag" id="item-three-complete"><%= @list.item_three %></h4>
+		  </div>
+		</div>
+	</li>
+<% else %>
+	<li class="item" data-id-third="<%= @list.id %>">
 	<div class="panel panel-primary box-shadow--8dp">
 	  <div class="panel-heading">
 	    <h5 class="panel-header-title">Task Three</h5>
 	  </div>
 	  <div class="panel-body">
-			<h4 class="panel-p-tag" id="item-three-complete"><%= @list.item_three %></h4>
+			<h4 class="panel-p-tag strikethrough" id="item-three-complete"><%= @list.item_three %></h4>
 	  </div>
-	  <div class="panel-footer"><input class="toggle panel-title", id="form-input-three" type="checkbox" unchecked=""> Complete</div>
 	</div>
 </li>
+<% end %>
