@@ -10,33 +10,33 @@ $(function(){
 
 	$('#form-input').click(function() {
 	  if ($(this).is(':checked')) {
-	  	$('#first-form').addClass("strikethrough")
+	  	$('#item-one-complete').addClass("strikethrough")
 	  } else {
-	    $('#first-form').removeClass("strikethrough")
+	    $('#item-one-complete').removeClass("strikethrough")
 	  }
 	});
 
 	$('#form-input-two').click(function() {
 	  if ($(this).is(':checked')) {
-	  	$('#second-form').addClass("strikethrough")
+	  	$('#item-two-complete').addClass("strikethrough")
 	  } else {
-	    $('#second-form').removeClass("strikethrough")
+	    $('#item-two-complete').removeClass("strikethrough")
 	  }
 	});
 
 	$('#form-input-three').click(function() {
 	  if ($(this).is(':checked')) {
-	  	$('#third-form').addClass("strikethrough")
+	  	$('#item-three-complete').addClass("strikethrough")
 	  } else {
-	    $('#third-form').removeClass("strikethrough")
+	    $('#item-three-complete').removeClass("strikethrough")
 	  }
 	});
 
 	$('#form-input-four').click(function() {
 	  if ($(this).is(':checked')) {
-	  	$('#fourth-form').addClass("strikethrough")
+	  	$('#item-four-complete').addClass("strikethrough")
 	  } else {
-	    $('#fourth-form').removeClass("strikethrough")
+	    $('#item-four-complete').removeClass("strikethrough")
 	  }
 	});
 

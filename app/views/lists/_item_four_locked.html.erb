@@ -4,9 +4,8 @@
 	    <h5 class="panel-header-title">Task Four</h5>
 	  </div>
 	  <div class="panel-body">
-	    <%= form_for(@list, url: {action: "update"}, :remote => true) do |f| %>
-			   	<%= f.text_field :item_four, placeholder: 'Add a task', :class => "edit form-control", :id => "fourth-form" %>
-			  <% end %>
+	  	<h4 class="panel-p-tag" id="item-four-complete"><%= @list.item_four %></h4>
 	  </div>
+	  <div class="panel-footer"><input class="toggle panel-title", id="form-input-four" type="checkbox" unchecked=""> Complete</div>
 	</div>
 </li>

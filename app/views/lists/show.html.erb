@@ -4,12 +4,30 @@
     <!-- <h1 id="list-h1"><%#= @list.name %></h1> -->
   </header>
 	<section class="main">
+	<% if @list.editable == true %>
 		<ul class="todo-list">
 			<%= render 'lists/item_one' %>
 			<%= render 'lists/item_two' %>
 			<%= render 'lists/item_three' %>
 			<%= render 'lists/item_four' %>
 		</ul>
+	<% else %>
+		<ul class="todo-list">
+			<%= render 'lists/item_one_locked' %>
+			<%= render 'lists/item_two_locked' %>
+			<%= render 'lists/item_three_locked' %>
+			<%= render 'lists/item_four_locked' %>
+		</ul>
+	<% end %>
 	</section>
 
 
+<!-- if this record was created before midnight
+do not render form. instead render noraml view in a panel -->
+
+<% if @list.editable == true %>
+	<p>editable</p>
+<% else %>
+	<p>not editable</p>
+	<p>Why can't I edit this todo list? Tooltip</p>
+<% end %>

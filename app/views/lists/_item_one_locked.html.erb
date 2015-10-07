@@ -4,9 +4,8 @@
 	    <h5 class="panel-header-title">Mission Critical Task One</h5>
 	  </div>
 	  <div class="panel-body">
-	    <%= form_for(@list, url: {action: "update"}, :remote => true) do |f| %>
-			   	<%= f.text_field :item_one, placeholder: 'Add a task', :class => "edit form-control", :id => "first-form" %>
-			  <% end %>
+	  	<h4 class="panel-p-tag" id="item-one-complete"><%= @list.item_one %></h4>
 	  </div>
+	  <div class="panel-footer"><input class="toggle panel-title", id="form-input" type="checkbox" unchecked=""> Complete</div>
 	</div>
 </li>
