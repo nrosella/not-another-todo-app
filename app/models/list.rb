@@ -3,7 +3,12 @@ class List < ActiveRecord::Base
 
 	def title
 		# binding.pry
-		if self.format == 0  # Friday 02 October 2015 
+		todays_post = (self.created_at + 1.day).at_beginning_of_day == Time.zone.now.at_beginning_of_day
+
+		if todays_post
+			new_title = "Today's List"
+			new_title
+		elsif self.format == 0  # Friday 02 October 2015 
 			new_title = self.created_at + 1.day
 			new_title.frmt_AA_dd_BB_YY " "
 		elsif self.format == 2 # 02/10/2015 - UK
@@ -37,5 +42,8 @@ class List < ActiveRecord::Base
   end
 	
 end
+
+
+
 
 
