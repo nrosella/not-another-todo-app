@@ -29,7 +29,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     # binding.pry
     if @list.update(list_params)
-      render   
+      redirect_to list_path(@list)
     else
       @list = @item.list
       render 'list/show'
@@ -39,7 +39,7 @@ class ListsController < ApplicationController
 
 	private
 	def list_params
-		params.require(:list).permit(:name, :item_one, :item_two, :item_three, :item_four)
+		params.require(:list).permit(:name, :item_one, :item_two, :item_three, :item_four, :completed)
 	end
 
 end

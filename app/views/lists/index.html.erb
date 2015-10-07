@@ -14,7 +14,7 @@
   <section class="main">
     <ul class="todo-list">
       <% @lists.each do |list| %>
-      <li><a href='<%= list_path(list.id) %>'><%= list.title %></li>
+      <li><h3><a href='<%= list_path(list.id) %>'><%= list.title %></h3></li>
       <% end %>
     </ul>
   </section>

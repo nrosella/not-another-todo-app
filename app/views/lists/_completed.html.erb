@@ -1,0 +1,4 @@
+    <%= form_for(@list, url: {action: "update"}, :remote => true) do |f| %>
+    	<%= f.hidden_field :completed, :class => "new-todo", :value => true %>
+    	<%= f.submit "Mark all as completed", :class => "btn btn-warning btn-lg", :id => "completed-button" %>
+    <% end %>

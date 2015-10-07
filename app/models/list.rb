@@ -40,6 +40,14 @@ class List < ActiveRecord::Base
   		false
   	end
   end
+
+  def is_completed
+  	if self.completed == true
+  		true
+  	else
+  		false
+  	end
+  end
 	
 end
 
