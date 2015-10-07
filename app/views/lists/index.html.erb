@@ -1,23 +1,26 @@
-<section class="todoapp col-lg-12 col-sm-12">
-  <header class="header">
-    <h1>Your Todos</h1>
-    <% if @lists.today == true %>
-      <%= form_for(@list) do |f| %>
-        <%= f.hidden_field :name, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
-        <%= f.submit "Create a new list for tomorrow", :class => "btn btn-warning btn-lg"%>
-        <% end %>
-      <% else %>
-        <p>You've already created tomorrow's list</p>
-    <% end %>
-
-  </header>
-  <section class="main">
-    <ul class="todo-list">
-      <% @lists.each do |list| %>
-      <li><h3><a href='<%= list_path(list.id) %>'><%= list.title %></h3></li>
+<% if user_signed_in? %>
+  <section class="todoapp col-lg-12 col-sm-12">
+    <header class="header">
+      <h1>Your Todos</h1>
+      <% if @lists.today == true %>
+        <%= form_for(@list) do |f| %>
+          <%= f.hidden_field :name, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
+          <%= f.submit "Create a new list for tomorrow", :class => "btn btn-warning btn-lg"%>
+          <% end %>
+        <% else %>
+          <p>You've already created tomorrow's list</p>
       <% end %>
-    </ul>
-  </section>
-</section>
 
+    </header>
+    <section class="main">
+      <ul class="todo-list">
+        <% @lists.each do |list| %>
+        <li><h3><a href='<%= list_path(list.id) %>'><%= list.title %></h3></li>
+        <% end %>
+      </ul>
+    </section>
+  </section>
+<% else %>
+  <p>you need to log in</p>
+<% end %>
 
