@@ -1,4 +1,4 @@
-
+<% if user_signed_in? %>
   <header class="header">
     <h1 id="list-h1"><%= @list.title %></h1>
     <!-- <h1 id="list-h1"><%#= @list.name %></h1> -->
@@ -21,6 +21,11 @@
 		</ul>
 	<% end %>
 	</section>
+<% else %>
+
+<p>click here to sign in</p>
+
+<% end %>
 
 
 <!-- if this record was created before midnight
