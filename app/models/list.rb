@@ -25,7 +25,17 @@ class List < ActiveRecord::Base
     else
     	false
     end
-    # where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight) ? true : false
+  end
+
+  def editable
+		#binding.pry
+  	if self.created_at > Time.zone.now.at_beginning_of_day
+  		true
+  	else
+  		false
+  	end
   end
 	
 end
+
+
