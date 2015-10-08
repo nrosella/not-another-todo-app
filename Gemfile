@@ -67,6 +67,7 @@ gem 'figaro'
 gem 'turbolinks'
 gem 'simple_form'
 gem 'formatted_times'
+gem 'bootstrap_form'
 
 
 

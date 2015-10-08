@@ -4,9 +4,9 @@ $(document).on("page:load", function(){
     $(this).parents("li").find("input[name='list[item_one]']").focus();
   });
 
-  $("ul").on("blur", "input[name='list[item_one]']", function(){
-    $(this).parents("form").trigger("submit");
-  })
+  // $("ul").on("blur", "input[name='list[item_one]']", function(){
+  //   $(this).parents("form").trigger("submit");
+  // });
 
 	$('#completed-button').click(function(){
 		$('#item-one-complete').addClass("strikethrough");
@@ -17,3 +17,11 @@ $(document).on("page:load", function(){
 
 });
 
+$(function(){
+    $("#first-form, #second-form, #third-form, #fourth-form").on("keypress", function (e) {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  })
+
+});

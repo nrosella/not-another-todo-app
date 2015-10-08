@@ -6,10 +6,54 @@
 	<section class="main">
 	<% if @list.editable == true %>
 		<ul class="todo-list">
-			<%= render 'lists/item_one' %>
-			<%= render 'lists/item_two' %>
-			<%= render 'lists/item_three' %>
-			<%= render 'lists/item_four' %>
+		<%= simple_form_for(@list, url: {action: "update"}, :remote => true) do |f| %>
+		
+			<li class="item" data-id-first="<%= @list.id %>">
+				<div class="panel panel-danger box-shadow--8dp">
+	  			<div class="panel-heading">
+	    			<h5 class="panel-header-title">Mission Critical Task One</h5>
+	  			</div>
+	  			<div class="panel-body">
+						<%= f.input_field :item_one, placeholder: 'Add a task', :class => "edit form-control", :id => "first-form" %>
+					</div>
+				</div>
+			</li>
+			<li class="item" data-id-second="<%= @list.id %>">
+				<div class="panel panel-info box-shadow--8dp">
+	  			<div class="panel-heading">
+	    			<h5 class="panel-header-title">Mission Critical Task Two</h5>
+	  			</div>
+	  			<div class="panel-body">
+						<%= f.text_field :item_two, placeholder: 'Add a task', :class => "edit form-control", :id => "second-form" %>
+					</div>
+				</div>
+			</li>
+			<li class="item" data-id-third="<%= @list.id %>">
+				<div class="panel panel-primary box-shadow--8dp">
+	  			<div class="panel-heading">
+	    			<h5 class="panel-header-title">Task Three</h5>
+	  			</div>
+	  			<div class="panel-body">
+						<%= f.text_field :item_three, placeholder: 'Add a task', :class => "edit form-control", :id => "third-form" %>
+					</div>
+				</div>
+			</li>
+			<li class="item" data-id-fourth="<%= @list.id %>">
+				<div class="panel panel-warning box-shadow--8dp">
+					<div class="panel-heading">
+	   			 <h5 class="panel-header-title">Task Four</h5>
+	  			</div>
+	  			<div class="panel-body">
+						<%= f.text_field :item_four, placeholder: 'Add a task', :class => "edit form-control", :id => "fourth-form" %>
+					</div>
+				</div>
+			</li>
+		<li><%= f.submit "Save list" %></li>
+<% end %>
+			<%#= render 'lists/item_one' %>
+			<%#= render 'lists/item_two' %>
+			<%#= render 'lists/item_three' %>
+			<%#= render 'lists/item_four' %>
 		</ul>
 	<% else %>
 		<ul class="todo-list">
@@ -37,3 +81,8 @@ do not render form. instead render noraml view in a panel -->
 	<p>not editable</p>
 	<p>Why can't I edit this todo list? Popover</p>
 <% end %>
+
+
+
+
+

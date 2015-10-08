@@ -1,6 +1,8 @@
 class List < ActiveRecord::Base
 	belongs_to :user
 
+	validates :item_one, presence: true
+
 	def title
 		# binding.pry
 		todays_post = (self.created_at + 1.day).at_beginning_of_day == Time.zone.now.at_beginning_of_day
