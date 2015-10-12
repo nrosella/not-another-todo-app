@@ -70,6 +70,12 @@ a:focus {
     outline: 0;
 }
 
+.navbar-inverse .navbar-brand {
+    color: #fff;
+    font-weight: 900;
+    font-size: 30px;
+}
+
 a:before,
 a:after {
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -106,8 +112,16 @@ ul.todo-list {
 	color: white;
 }
 
+strong .navbar-brand {
+  color: white;
+}
+
 .navbar-default .navbar-nav > li > a {
 	color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
 }
 
 /* Helpers */
@@ -138,6 +152,7 @@ section.todoapp {
 
 #main-body {
     background-color: #3498db;
+
 }
 
 #list-h1 {
@@ -219,6 +234,55 @@ panel {
           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
+#main-landing h1, h3 {
+  margin-top: 60px;
+  margin-bottom: 15px;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+#main-image {
+  margin-left: none;
+}
+
+#main-landing a {
+  color: black;
+}
+
+.landing-page {
+  margin-top: 150px;
+  color: white;
+}
+
+.row .mt. centered {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#landing-page-bottom {
+  background-color: #eee;
+  width: 100%;
+  color: black;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#oi {
+    width: 100%;
+    padding-right: 0px;
+}
+
+#landing-page-bottom h1 {
+  margin-top: 50px;
+}
+
+.container, main {
+    padding-right: 15px;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
 /* Simple Form Styling */
 
 .simple_form div.input {

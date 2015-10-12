@@ -1,15 +1,18 @@
 class ListsController < ApplicationController
 
 	def index
+		# @user = current_user
 		@list = List.new
 		@lists = List.order("created_at desc")
 		# @lists = List.all
 	end
 
 	def create
+		# @user = current_user
 		@list = List.new(list_params)
 		#binding.pry
 	  if @list.save
+	  	# @list.create(user_id: current_user)
 	  	redirect_to list_path(@list)
       # if request.xhr?
       # 	render :layout => false
