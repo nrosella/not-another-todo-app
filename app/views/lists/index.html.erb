@@ -2,7 +2,7 @@
   <section class="todoapp col-lg-12 col-sm-12">
     <header class="header">
       <h1>Your Todos</h1>
-      <% if @lists.today == true %>
+      <% if current_user.lists.today == true %>
       <div id="new-list-form">
         <%= form_for (@list) do |f| %>
           <%= f.text_field :item_one, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>

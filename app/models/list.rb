@@ -27,6 +27,7 @@ class List < ActiveRecord::Base
 
 	def self.today
     a = where("created_at >= ?", Time.zone.now.beginning_of_day)
+    # binding.pry
     if a.empty? == true
     	true
     else
