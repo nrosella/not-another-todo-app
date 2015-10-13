@@ -2,13 +2,12 @@ class ListsController < ApplicationController
 
 	def index
 		@list = List.new
-		@lists = List.order("created_at desc")
-		# @lists = List.all
+		@lists = List.where("created_at")
 	end
 
 	def create
 		@list = List.new(list_params)
-		#binding.pry
+		@list.user_id = current_user.id
 	  if @list.save
 	  	redirect_to list_path(@list)
       # if request.xhr?

@@ -5,5 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :lists
+
+  # after_create :send_admin_mail
+
+  # def send_admin_mail
+  #   UserMailer.send_welcome_email(self).deliver
+  # end
   
 end

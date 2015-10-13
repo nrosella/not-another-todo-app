@@ -3,24 +3,59 @@
     <header class="header">
       <h1>Your Todos</h1>
       <% if @lists.today == true %>
-        <%= form_for(@list) do |f| %>
-          <%= f.hidden_field :name, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
+      <div id="new-list-form">
+        <%= form_for (@list) do |f| %>
+          <%= f.text_field :item_one, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
+          <%= f.text_field :item_two, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
+          <%= f.text_field :item_three, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
+          <%= f.text_field :item_four, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
           <%= f.submit "Create a new list for tomorrow", :class => "btn btn-warning btn-lg"%>
-          <% end %>
+        <% end %>
+
+      </div>
+      <button class="btn btn-warning btn-lg" id="the-button">the button</button>
         <% else %>
-          <p>You've already created tomorrow's list</p>
+          <h4>You've already created tomorrow's list</h4>
       <% end %>
 
     </header>
     <section class="main">
       <ul class="todo-list">
-        <% @lists.each do |list| %>
+        <% current_user.lists.each do |list| %>
         <li><h3><a href='<%= list_path(list.id) %>'><%= list.title %></h3></li>
         <% end %>
       </ul>
     </section>
   </section>
 <% else %>
-  <h3>Hello there, sneaky. You need to log in or sign up to view this page</h3>
-<% end %>
 
+<!-- Landing page -->
+
+  <main role="main" class="container" id="main-body">
+    <div class="row">
+      <div class="col-lg-6 col-md-6" id="main-landing">
+        <h1>The todo app for <br>truly productive people</h1>
+        <br>
+        <h3>Inspired by the writings of <a href='http://www.fourhourworkweek.com'>Tim Ferris</a><br> in the 4 Hour Work Week</h3>
+      </div>
+      <div class="col-lg-6 col-md-6" id="main-image">
+        <%= image_tag("ipad-hand.png") %>
+      </div>
+    </div>
+  </main>
+      <div class="row mt centered" id="landing-page-bottom">
+        <h1>Your todo list is too long.</h1>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+        <h3>KANgknkeg ewgkrg wrk</h3>
+      </div>
+<% end %>
