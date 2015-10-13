@@ -24,6 +24,10 @@ $(function(){
     }
   })
 
+    // $('#the-button').click(fucntion(){
+    //   $('#new-list-form').hide();
+    // });
+
 });
 
 document.addEventListener("DOMContentLoaded", function() {
