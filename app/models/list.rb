@@ -8,7 +8,7 @@ class List < ActiveRecord::Base
 		todays_post = (self.created_at + 1.day).at_beginning_of_day == Time.zone.now.at_beginning_of_day
 
 		if todays_post
-			new_title = "Today's List"
+			new_title = "Today's Todo List"
 			new_title
 		elsif self.format == 0  # Friday 02 October 2015 
 			new_title = self.created_at + 1.day

@@ -1,3 +1,4 @@
+<div class="col-lg-offset-3 col-lg-6 col-sm-offset-3 col-sm-6">
 <% if user_signed_in? %>
   <header class="header">
     <h1 id="list-h1"><%= @list.title %></h1>
@@ -48,7 +49,7 @@
 					</div>
 				</div>
 			</li>
-		<li><%= f.submit "Save list" %></li>
+		<li><%= f.submit "Save list", :class => "btn btn-warning btn-lg" %></li>
 <% end %>
 			<%#= render 'lists/item_one' %>
 			<%#= render 'lists/item_two' %>
@@ -71,7 +72,4 @@
 
 <% end %>
 
-
-
-
-
+</div>
