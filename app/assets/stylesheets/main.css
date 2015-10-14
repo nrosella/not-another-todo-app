@@ -9,7 +9,7 @@
 
 body {
   background-color: #3498db;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Avenir', sans-serif;
     font-weight: 300;
     font-size: 16px;
     color: #555;
@@ -136,8 +136,8 @@ strong .navbar-brand {
 	height: 42px;
 	font-size: 18px;
 	width: 280px;
-    border: none;
-    border-radius: 0px;
+  border: none;
+  border-radius: 0px;
 }
 
 i {
@@ -224,6 +224,7 @@ panel {
   padding: 6px 12px;
   font-size: 16px;
   line-height: 1.428571429;
+  text-align: left;
   color: #555555;
   vertical-align: middle;
   background-color: #ffffff;
@@ -319,6 +320,28 @@ panel {
   color: #ffffff;
   background-color: #E34053;
   border-color: #E34053;
+}
+
+#flash_notice {
+  margin-top: 20px;
+  vertical-align: middle;
+}
+
+#completed-button {
+  background-color: #49AD32;
+  border-color: #49AD32;
+}
+
+#footer-text {
+  color: #fff;
+}
+
+.index-h4 {
+  color: #fff;
+}
+
+#show-page-back-link {
+  margin-top: 20px;
 }
 
 /*.simple_form label {
