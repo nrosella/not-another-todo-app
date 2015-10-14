@@ -1928,11 +1928,12 @@ output {
 }
 
 .form-control {
-  display: block;
-  width: 100%;
+  display: inline;
+  margin-top: 10px;
   height: 34px;
+  width: auto;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 8px;
   line-height: 1.428571429;
   color: #555555;
   vertical-align: middle;
@@ -1947,7 +1948,6 @@ output {
 }
 
 .form-control:focus {
-  width: 100%;
   height: 100%;
   border-color: #66afe9;
   outline: 0;
@@ -1981,6 +1981,7 @@ fieldset[disabled] .form-control {
 
 textarea.form-control {
   height: auto;
+  width: 100%;
 }
 
 .form-group {
@@ -2213,7 +2214,7 @@ textarea.input-lg {
 
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 27px;
+  min-height: 27px;   
 }
 
 .form-horizontal .form-group {
@@ -2253,7 +2254,7 @@ textarea.input-lg {
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: none;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
