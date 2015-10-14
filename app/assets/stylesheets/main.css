@@ -306,6 +306,21 @@ panel {
           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
+#id-sign-up {
+  width: 100%;
+  text-align: left;
+}
+
+#spam-disclaimer{
+  color: #fff;
+}
+
+.btn-delete {
+  color: #ffffff;
+  background-color: #E34053;
+  border-color: #E34053;
+}
+
 /*.simple_form label {
   float: left;
   width: 100px;
