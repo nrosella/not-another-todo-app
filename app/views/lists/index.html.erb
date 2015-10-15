@@ -3,11 +3,11 @@
     <header class="header">
       <% if current_user.lists.today == true %>
       <div class="col-lg-12 col-md-12 col-xs-12" id="new-list-form">
-        <%= form_for (@list), :class => 'form-group' do |f| %>
-          <%= f.text_field :item_one, :class => "new-todo form-control", :placeholder => "Enter mission critical task one" %><br>
-          <%= f.text_field :item_two, :class => "new-todo form-control", :placeholder => "Enter mission critical task two" %><br>
-          <%= f.text_field :item_three, :class => "new-todo form-control", :placeholder => "Enter task three" %><br>
-          <%= f.text_field :item_four, :class => "new-todo form-control", :placeholder => "Enter task four" %><br>
+        <%= simple_form_for (@list), :class => 'form-group' do |f| %>
+          <%= f.input_field :item_one, :class => "new-todo form-control", :placeholder => "Enter mission critical task one" %><br>
+          <%= f.input_field :item_two, :class => "new-todo form-control", :placeholder => "Enter mission critical task two" %><br>
+          <%= f.input_field :item_three, :class => "new-todo form-control", :placeholder => "Enter task three" %><br>
+          <%= f.input_field :item_four, :class => "new-todo form-control", :placeholder => "Enter task four" %><br>
           <%= f.submit "Create a new list for tomorrow", :class => "btn btn-warning btn-lg", :id => "create-list-button"%>
         <% end %>
       </div>
@@ -44,18 +44,23 @@
   </main>
       <div class="row mt centered" id="landing-page-bottom">
         <h1>Your todo list is too long.</h1><br>
-        <%= image_tag("ipad-hand.png") %>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
-        <h3>KANgknkeg ewgkrg wrk</h3>
+        <%= image_tag("nata.png", :class => 'box-shadow--8dp') %><br>
+        <p id="">The idea behind NATA is that you should never turn up at the start of work without a clear list of your day's priorities. You should be making your todo list no later than this evening.</p>
+        <p>NATA allows you to create and edit tomorrow's todo list right up until 11:59pm today.</p>
+        <P>Your list should never have more than two <em>mission critical tasks</em>. NATA gives you this plus two more tasks should you feel the need. That's it.</p>
+        <p>Regain your day.</p>
       </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
