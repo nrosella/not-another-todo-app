@@ -28,6 +28,13 @@ $(function(){
     //   $('#new-list-form').hide();
     // });
 
+  $("#list_item_one").focusout(function(){
+      if (!$(this).val()) {
+            this.target.setCustomValidity("Hey, internet crusader! You have to have at least one Mission Critical Task!");
+            $(this).focus();
+      }
+  });
+
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -36,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         elements[i].oninvalid = function(e) {
             e.target.setCustomValidity("");
             if (!e.target.validity.valid) {
-                e.target.setCustomValidity("Hey, internet crusader! You have to have a Mission Critical Task!");
+                e.target.setCustomValidity("Hey, internet crusader! You have to have at least one Mission Critical Task!");
             }
         };
         elements[i].oninput = function(e) {
@@ -44,3 +51,4 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     }
 })
+
