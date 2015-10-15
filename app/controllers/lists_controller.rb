@@ -2,7 +2,7 @@ class ListsController < ApplicationController
 
 	def index
 		@list = List.new
-		@lists = List.where("created_at")
+		@lists = List.order("id")
 	end
 
 	def create

@@ -1,32 +1,30 @@
 <% if user_signed_in? %>
-  <section class="todoapp col-lg-12 col-sm-12">
+  <section class="index todoapp col-lg-offset-2 col-lg-4 col-sm-offset-2 col-sm-4">
     <header class="header">
-      <h1>Your Todos</h1>
       <% if current_user.lists.today == true %>
-      <div id="new-list-form">
-        <%= form_for (@list) do |f| %>
-          <%= f.text_field :item_one, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
-          <%= f.text_field :item_two, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
-          <%= f.text_field :item_three, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
-          <%= f.text_field :item_four, :class => "new-todo", :placeholder => "Enter a name for a new list..." %>
-          <%= f.submit "Create a new list for tomorrow", :class => "btn btn-warning btn-lg"%>
+      <div class="col-lg-12 col-md-12 col-xs-12" id="new-list-form">
+        <%= form_for (@list), :class => 'form-group' do |f| %>
+          <%= f.text_field :item_one, :class => "new-todo form-control", :placeholder => "Enter mission critical task one" %><br>
+          <%= f.text_field :item_two, :class => "new-todo form-control", :placeholder => "Enter mission critical task two" %><br>
+          <%= f.text_field :item_three, :class => "new-todo form-control", :placeholder => "Enter task three" %><br>
+          <%= f.text_field :item_four, :class => "new-todo form-control", :placeholder => "Enter task four" %><br>
+          <%= f.submit "Create a new list for tomorrow", :class => "btn btn-warning btn-lg", :id => "create-list-button"%>
         <% end %>
-
       </div>
-      <button class="btn btn-warning btn-lg" id="the-button">the button</button>
+      <button class="btn btn-warning btn-lg" id="the-button">Create a new todo list</button>
         <% else %>
-          <h5 class="index-h4">You've already started tomorrow's list.</h5>
-          <h5 class="index-h4">View it below. You have until midnight to edit it.</h5>
+          <button class="btn btn-warning btn-lg" id="already-created">Create a new todo list</button>
+          <h5 class="index-h4">You've already started tomorrow's list.<br>You have until midnight to edit it.</h5>
       <% end %>
-
     </header>
-    <section class="main">
-      <ul class="todo-list">
-        <% current_user.lists.each do |list| %>
-        <li><h3><a href='<%= list_path(list.id) %>'><%= list.title %></h3></li>
-        <% end %>
-      </ul>
-    </section>
+  </section>
+  <section class="index main col-lg-4 col-sm-4">
+    <h1>Your Todos</h1>
+    <ul class="todo-list">
+      <% current_user.lists.sort_by{|list| -list.id}.each do |list| %>
+      <li id="index-list-todos"><a href='<%= list_path(list.id) %>'><%= list.title %></li>
+      <% end %>
+    </ul>
   </section>
 <% else %>
 
