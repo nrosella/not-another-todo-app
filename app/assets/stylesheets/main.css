@@ -337,9 +337,32 @@ panel {
 
 .index-h4 {
   color: #fff;
+  margin-top: 20px;
 }
 
 #show-page-back-link {
+  margin-top: 20px;
+}
+
+#index-list-todos {
+  font-size: 24px;
+}
+
+.index {
+  margin-top: 80px;
+}
+
+#create-list-button {
+  margin-top: 20px;
+}
+
+#the-button {
+  margin-top: 20px;
+}
+
+#already-created {
+  background-color: #7F8486;
+  border: none;
   margin-top: 20px;
 }
 
