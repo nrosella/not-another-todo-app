@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Not Another Todo App2" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Not Another Todo App" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Not Another Todo App" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -19,7 +19,7 @@
           <%= yield %>
        </div>
     </main>
-    <footer class="container-fluid centered" id="footer-text">&copy <a href="http://www.ninorosella.uk">Nino Rosella</a> 2015</footer>
+    <footer class="container-fluid centered" id="footer-text">&copy <a href="http://www.ninorosella.uk" target="_blank">Nino Rosella</a> 2015</footer>
   </body>
 </html>
 
