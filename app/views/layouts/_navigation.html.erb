@@ -10,7 +10,7 @@
       </button>
       <%= link_to 'YATA', root_path, class: 'navbar-brand' %>
       <% if user_signed_in? %>
-        <%= link_to 'for ' + current_user.name, edit_user_registration_path, :class => "centered" %>
+        <%= link_to 'for ' + current_user.name.capitalize, edit_user_registration_path, :class => "centered" %>
       <% end %>
     </div>
     <div class="collapse navbar-collapse">
