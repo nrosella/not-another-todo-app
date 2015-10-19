@@ -68,6 +68,7 @@ gem 'turbolinks'
 gem 'simple_form'
 gem 'formatted_times'
 gem 'bootstrap_form'
+gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'
 
 
 
