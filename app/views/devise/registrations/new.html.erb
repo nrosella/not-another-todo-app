@@ -37,7 +37,14 @@
         <%#= f.label :password_confirmation, 'Password Confirmation' %>
         <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password", class: "form-control" %>
       </div>
+      <div class="">
+        <%#= f.label :newsletter %>
+        <%#= f.check_box :newsletter %>
+        <!-- Keep up to date with new features<br> and news -->
+      </div>
       <br>
+      <p>By signing up you agree to be included in the newsletter<br>
+      You can opt-out at any time :) </p>
       <div class="">
         <%= f.submit "Sign Up", class: "btn btn-lg btn-success" %>
       </div><br >
