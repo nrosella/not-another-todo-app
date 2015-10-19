@@ -1,4 +1,4 @@
-# Not Another Todo App 2
+# Not Another Todo App 
 
 ## Description
 
