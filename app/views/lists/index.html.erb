@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && @list.user = current_user %>
   <section class="index todoapp col-lg-offset-2 col-lg-4 col-sm-offset-2 col-sm-4">
     <header class="header">
       <% if current_user.lists.today == true %>

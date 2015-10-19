@@ -1,6 +1,9 @@
 class ListsController < ApplicationController
 
 	def index
+		# binding.pry
+		# if current_user != 
+		# @user = List.find(params[:id]).user_id
 		@list = List.new
 		@lists = List.order("id")
 	end
@@ -23,6 +26,12 @@ class ListsController < ApplicationController
 
 	def show
 		@list = List.find(params[:id])
+		unless current_user.id == @list.user_id
+      flash[:notice] = "You don't have access to other people's lists, Sonny Jim!"
+      redirect_to root_path
+      return
+    end
+		
 	end
 
 	def update
