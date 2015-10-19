@@ -2,7 +2,7 @@ $(function(){
 
 	$(document).ready(function(){
     $('#save-button').show()
-   }).ajaxStart(function () {
+    }).ajaxStart(function () {
        $('#save-button').text('Saving...');
     }).ajaxSuccess(function () {
     	$('#save-button').val('Saved!').css('background-color', '#49AD32').css('border', 'none').delay(1000).fadeOut(400, function(){
@@ -11,19 +11,26 @@ $(function(){
     	});
    });
 
+    $('#list_item_one').on('invalid', function(e) {
+        if (e.target.valueMissing) {
+            e.target.setCustomValidity("Nino");
+        }
+    })
+
 })
 
-$(document).addEventListener("DOMContentLoaded", function() {
-    var elements = document.getElementsByTagName("INPUT");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].oninvalid = function(e) {
-            e.target.setCustomValidity("");
-            if (!e.target.validity.valid) {
-                e.target.setCustomValidity("Hey, internet crusader! You have to have at least one Mission Critical Task!");
-            }
-        };
-        elements[i].oninput = function(e) {
-            e.target.setCustomValidity("");
-        };
-    }
-})
+// $(document).addEventListener("DOMContentLoaded", function() {
+//     var elements = document.getElementsByTagName("INPUT");
+//     for (var i = 0; i < elements.length; i++) {
+//         elements[i].oninvalid = function(e) {
+//             e.target.setCustomValidity("");
+//             if (!e.target.validity.valid) {
+//                 e.target.setCustomValidity("Hey, internet crusader! You have to have at least one Mission Critical Task!");
+//             }
+//         };
+//         elements[i].oninput = function(e) {
+//             e.target.setCustomValidity("");
+//         };
+//     }
+// })
+
