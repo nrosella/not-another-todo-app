@@ -6,7 +6,7 @@ Todo app
 
 ## Screenshots
 
-Add some spiffy screenshots of your app here.
+Will add later
 
 ## Background
 
