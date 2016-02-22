@@ -1,31 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe List, type: :model do
+
+	it "is has a valid factory" do
+    expect(build(:list)).to be_valid
+  end
   
 	it 'is valid with an item_one' do
-		list = List.new(item_one: "Task one")
-		expect(list).to be_valid
+		expect(build(:list)).to be_valid
 	end
 
 	it 'is invalid without an item_one' do
-		list = List.new(item_one: nil)
+		list = build(:list, item_one: nil)
 		list.valid?
 		expect(list.errors[:item_one]).to include("can't be blank")
 	end
 
 	describe "format list title based on date" do
-		before :each do
-			@list = List.create(
-				item_one: "Task one",
-				item_two: 'Task two',
-				item_three: 'Task three',
-				item_four: 'Task four',
-				created_at: Time.new(2016, 3, 1, 22, 35, 0)
-				)
-		end
+		 before :each do
+		 	@list = create(:list, created_at: Time.new(2016, 3, 1, 22, 35, 0))
+		 end
 
 		context "today's todo list" do
-			it "returns the today's todo list" do
+			it "returns the text today's todo list" do
 				@list.created_at = Time.now - 1.day
 				expect(@list.title).to eq "Today's Todo List"
 			end
@@ -33,6 +30,7 @@ RSpec.describe List, type: :model do
 
 		context "not today's todo list" do
 			it "returns the title as date formatted in whole words as the default" do
+				@list.format = 0
 				expect(@list.title).to eq "Wednesday 02 March 2016"
 			end
 			it 'returns the title in UK format digits separated by slashes' do
@@ -52,12 +50,7 @@ RSpec.describe List, type: :model do
 
 	describe "checks if list is editable" do
 		before :each do
-			@list = List.create(
-				item_one: "Task one",
-				item_two: 'Task two',
-				item_three: 'Task three',
-				item_four: 'Task four',
-				)
+			@list = create(:list)
 		end
 
 		context "was created today" do
@@ -75,7 +68,7 @@ RSpec.describe List, type: :model do
 
 	describe "checks if an item is completed" do
 		before :each do 
-			@list = List.create(item_one: "Task one")
+			@list = create(:list)
 		end
 
 		context "if completed is set to false" do
