@@ -16,7 +16,21 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require "rails/all"
+require 'rspec/rails'
+require 'capybara/rails'
+require 'capybara/rspec'
+Dir["./spec/support/**/*.rb"].sort.each { |f| require f}
+
+Capybara.app_host = "http://localhost:3000"
+Capybara.server_host = "localhost"
+Capybara.server_port = "3000"
+
 RSpec.configure do |config|
+
+  config.include CapybaraHelper, :type => :feature
+  config.include Rails.application.routes.url_helpers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

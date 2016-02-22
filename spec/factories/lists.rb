@@ -8,4 +8,8 @@ FactoryGirl.define do
 		item_four "Task four"
   end
 
+  factory :feature_list do
+  	
+  end
+
 end

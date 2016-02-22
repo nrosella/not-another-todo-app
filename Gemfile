@@ -42,7 +42,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '~> 2.52.0'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'factory_girl_rails'
