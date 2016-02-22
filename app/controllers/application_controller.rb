@@ -7,14 +7,14 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(current_user)
-     root_path(current_user)
+    root_path(current_user)
   end
 
-    protected
+  protected
 
-        def configure_permitted_parameters
-            devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :last_name, :email, :password, :newsletter) }
-        end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :last_name, :email, :password, :newsletter) }
+  end
 
   def about
   	render 'about'
