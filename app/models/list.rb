@@ -4,7 +4,6 @@ class List < ActiveRecord::Base
 	validates :item_one, presence: true
 
 	def title
-		# binding.pry
 		todays_post = (self.created_at + 1.day).at_beginning_of_day == Time.zone.now.at_beginning_of_day
 
 		if todays_post
@@ -14,7 +13,6 @@ class List < ActiveRecord::Base
 			new_title = self.created_at + 1.day
 			new_title.frmt_AA_dd_BB_YY " "
 		elsif self.format == 2 # 02/10/2015 - UK
-			binding.pry
 			new_title = self.created_at + 1.day
 			new_title.frmt_dd_mm_YY '/'
 		elsif self.format == 3 # 10/02/2015 - US
@@ -26,30 +24,16 @@ class List < ActiveRecord::Base
 	end
 
 	def self.today
-    a = where("created_at >= ?", Time.zone.now.beginning_of_day)
-    # binding.pry
-    if a.empty? == true
-    	true
-    else
-    	false
-    end
+    day = where("created_at >= ?", Time.zone.now.beginning_of_day)
+    day.empty? == true ? true : false
   end
 
   def editable
-		#binding.pry
-  	if self.created_at > Time.zone.now.at_beginning_of_day
-  		true
-  	else
-  		false
-  	end
+  	self.created_at > Time.zone.now.at_beginning_of_day ? true : false
   end
 
   def is_completed
-  	if self.completed == true
-  		true
-  	else
-  		false
-  	end
+  	self.completed == true ? true : false
   end
 	
 end
