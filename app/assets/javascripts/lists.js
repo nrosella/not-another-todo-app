@@ -4,10 +4,6 @@ $(document).on("page:load", function(){
     $(this).parents("li").find("input[name='list[item_one]']").focus();
   });
 
-  // $("ul").on("blur", "input[name='list[item_one]']", function(){
-  //   $(this).parents("form").trigger("submit");
-  // });
-
 	$('#completed-button').click(function(){
 		$('#item-one-complete').addClass("strikethrough");
 		$('#item-two-complete').addClass("strikethrough");
@@ -23,10 +19,6 @@ $(function(){
         return false;
     }
   })
-
-    // $('#the-button').click(fucntion(){
-    //   $('#new-list-form').hide();
-    // });
 
   $("#list_item_one").focusout(function(){
       if (!$(this).val()) {
